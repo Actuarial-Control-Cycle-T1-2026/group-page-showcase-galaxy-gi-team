@@ -16,6 +16,7 @@ Step 2: Update the README.md file (basically this file dictates what the website
 I have already added the headings (below).
 
 Notes:
+
 Can insert R code like this (check README.md file):
 ``` r
 freq_model <- glm(claim_count ~ equipment_type + equipment_age_group +
