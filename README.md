@@ -10,6 +10,7 @@ The website is just to showcase our work, no requirements other than:
 
 
 Step 1: Upload images of plots we want to include
+
 Step 2: Update the README.md file (basically this file dictates what the website shows)
 
 I have already added the headings (below).
