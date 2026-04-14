@@ -43,6 +43,7 @@ Significant data cleaning was required before modelling to ensure the datasets w
 
 See example code to ensure data is appropriate as per the Data Dictionary
 
+``` r
 cargo_freq_clean <- cargo_freq_clean %>%
   filter(
     cargo_value >= 50000 & cargo_value <= 680000000,
@@ -58,6 +59,7 @@ cargo_freq_clean <- cargo_freq_clean %>%
     claim_count >= 0 & claim_count <= 5,
     claim_count == floor(claim_count)
   )
+```
 
 ## Exploratory Data Analysis
 To better understand the severity and frequency data from the datasets, exploratory data analysis was undertaken. In this step, we looked at summary statistics, histograms and plots. 
@@ -68,6 +70,15 @@ The above histogram demonstrates the bimodal nature of cargo loss severity. This
 
 ## Modelling Approach and Methodology
 Describe general modelling appraoch used (i.e. just 1-2 paragraphs rather than including a modelling appraoch for each hazard area), and then include outputs from each of the hazard areas maybe
+
+# Cargo Loss
+For cargo loss frequency, a Poisson model was initially fit. However, after finding the dispersion coefficient of 4.506735, it was clear that the model was too dispersed to fit the data. Then a negative binomial was fit to cargo loss frequency. After testing the AIC, it was clear that the negative binomial model was a better fit for the dataset. Then, testing was performed to reduce the complexity of the model by removing insignificant and unnecessary predictors. AIC was also used to test the goodness of fit of the model, with results showing a reduced model was less complex and a better fit. 
+
+For cargo loss severity, from the EDA above it was clear that severity was split into two distinct groups. After testing a Gamma model and the Pearson residuals, it was clear that Gamma was not a good fit for the data. 
+
+<img width="669" height="488" alt="Screenshot 2026-04-14 at 10 33 17 PM" src="https://github.com/user-attachments/assets/8638a0a5-f79a-4d95-a1ea-a7eae710921f" />
+
+After seeing the spread of claim amount by cargo type (see above image), the severity data was split depending on cargo group. Then two Gamma generalised linear models were fit to each dataset. After comparing the AIC after this change, it was determined that this was a better fit for the data. 
 
 ## Assumptions
 INSERT TEXT
