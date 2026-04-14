@@ -41,6 +41,31 @@ The primary datasets used in this analysis were provided in the Project Data sec
 
 Significant data cleaning was required before modelling to ensure the datasets were suitable for statistical analysis. Data cleaning performed was the removal of negative values and missing claim information and the cleaning of data outside the ranges defined in the Data Dictionary. The missing claim information was removed to maintain data accuracy and sufficient data observations remain. Hence, through these procedures we have ensured accurate, appropriate and reliable data is inputted into our models.  
 
+See example code to ensure data is appropriate as per the Data Dictionary
+
+cargo_freq_clean <- cargo_freq_clean %>%
+  filter(
+    cargo_value >= 50000 & cargo_value <= 680000000,
+    weight >= 1500 & weight <= 250000,
+    route_risk %in% c(1,2,3,4,5),
+    distance >= 1 & distance <= 100,
+    transit_duration >= 1 & transit_duration <= 60,
+    pilot_experience >= 1 & pilot_experience <= 30,
+    vessel_age >= 1 & vessel_age <= 50,
+    solar_radiation >= 0 & solar_radiation <= 1,
+    debris_density >= 0 & debris_density <= 1,
+    exposure >= 0 & exposure <= 1,
+    claim_count >= 0 & claim_count <= 5,
+    claim_count == floor(claim_count)
+  )
+
+## Exploratory Data Analysis
+To better understand the severity and frequency data from the datasets, exploratory data analysis was undertaken. In this step, we looked at summary statistics, histograms and plots. 
+
+<img width="666" height="484" alt="Screenshot 2026-04-14 at 10 25 56 PM" src="https://github.com/user-attachments/assets/930cf15d-179f-47b6-8a1c-caa446a575df" />
+Example for Cargo Loss
+The above histogram demonstrates the bimodal nature of cargo loss severity. This is due to a higher number of small or catastrophic cargo accidents. Hence, through this exploratory data analysis, we can better understand the nature of the cargo loss claims and therefore the best way to price them. 
+
 ## Modelling Approach and Methodology
 Describe general modelling appraoch used (i.e. just 1-2 paragraphs rather than including a modelling appraoch for each hazard area), and then include outputs from each of the hazard areas maybe
 
