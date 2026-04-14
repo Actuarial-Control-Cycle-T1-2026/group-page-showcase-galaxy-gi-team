@@ -66,7 +66,9 @@ To better understand the severity and frequency data from the datasets, explorat
 
 <img width="666" height="484" alt="Screenshot 2026-04-14 at 10 25 56 PM" src="https://github.com/user-attachments/assets/930cf15d-179f-47b6-8a1c-caa446a575df" />
 
+
 Example for Cargo Loss
+
 The above histogram demonstrates the bimodal nature of cargo loss severity. This is due to a higher number of small or catastrophic cargo accidents. Hence, through this exploratory data analysis, we can better understand the nature of the cargo loss claims and therefore the best way to price them. 
 
 ## Modelling Approach and Methodology
