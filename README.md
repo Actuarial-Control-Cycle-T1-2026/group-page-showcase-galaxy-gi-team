@@ -42,13 +42,16 @@ The primary datasets used in this analysis were provided in the Project Data sec
 Significant data cleaning was required before modelling to ensure the datasets were suitable for statistical analysis. Data cleaning performed was the removal of negative values and missing claim information and the cleaning of data outside the ranges defined in the Data Dictionary. The missing claim information was removed to maintain data accuracy and sufficient data observations remain. Hence, through these procedures we have ensured accurate, appropriate and reliable data is inputted into our models.  
 
 ## Modelling Approach and Methodology
-INSERT TEXT
+Describe general modelling appraoch used (i.e. just 1-2 paragraphs rather than including a modelling appraoch for each hazard area), and then include outputs from each of the hazard areas maybe
 
 ## Assumptions
 INSERT TEXT
 
 ## Key Results
-INSERT TEXT
+We could include a table containing expected net revenue for each of the systems for each hazard area?
+
+## Risk Assessment
+Go over risk profile of each solar system, no need to do separately for each hazard area I reckon
 
 ## Recommendations
 Product design, future scalability, etc?
