@@ -84,7 +84,135 @@ For cargo loss severity, from the EDA above it was clear that severity was split
 After seeing the spread of claim amount by cargo type (see above image), the severity data was split depending on cargo group. Then two Gamma generalised linear models were fit to each dataset. After comparing the AIC after this change, it was determined that this was a better fit for the data. 
 
 ## Assumptions
-INSERT TEXT
+### 5a. Business Interruption
+
+**Model**
+- Negative Binomial frequency (dispersion: 1.97)
+- Gamma severity (dispersion: 2.82)
+- Claims assumed independent
+
+**Key Variables**
+- Supply chain index (p = 0.022)
+- Energy backup score (p = 0.036)  
+→ Both significant for frequency only
+
+**Product Features**
+- Deductible: 10th percentile ($462,800)
+- Per-claim cap: 95th percentile ($15.2M)
+- Aggregate cap: 99.5th percentile ($1.105B)
+- Minimum requirements:
+  - Energy backup ≥ 2/5
+  - Safety compliance ≥ 2/5
+
+**Pricing Inputs**
+- Expense ratio: 15%
+- Risk loading: 10%
+- Profit margin: 5%
+- Inflation: 4.23%
+- Discount rate: 5.10%
+
+---
+
+### 5b. Workers Compensation
+
+**Model**
+- Poisson frequency (dispersion: 0.994)
+- Gamma severity (dispersion: 5.50)
+- Claims assumed independent
+
+**Key Assumptions**
+- Gravity factors:
+  - Bayesia: 1.375
+  - Oryn Delta: 0.875
+  - Helionis: 1.125
+- Workforce distribution: 54.5% / 27.3% / 18.2%
+- 23 roles mapped to 11 occupation categories
+- Salary cap: $130,000
+- Missing worker characteristics simulated
+
+**Key Variables**
+- Frequency:
+  - Occupation
+  - Accident history
+  - Psychological stress
+  - Gravity (p = 0.003)
+  - Safety training
+- Severity:
+  - Psychological stress
+  - Base salary
+- Gravity not significant for severity (p = 0.895)
+
+**Product Features**
+- Excess: 10th percentile ($555)
+- Per-claim cap: 95th percentile ($48,000)
+- Aggregate cap: ~99.5th percentile ($24M)
+- Exclusion:
+  - Safety training < level 2 (43% higher claim rate)
+  - No exclusion for gear (not significant)
+
+**Pricing Inputs**
+- Expense ratio: 15%
+- Risk loading: 10%
+- Profit margin: 5%
+- Inflation: 4.23%
+- Discount rate: 5.10%
+- Workforce growth: 2.1% p.a.
+
+---
+
+### 5c. Equipment Failure
+
+**Model**
+- Poisson frequency (dispersion ≈ 1)
+- Gamma severity (dispersion ≈ 0.73)
+
+**Key Variables**
+- Maintenance frequency (p < 2e-16)  
+→ Significant for frequency only
+
+**Product Features**
+- Deductible: 10th percentile ($34,740)
+- Per-claim cap: 95th percentile ($196,169)
+- Aggregate cap: 99.5th percentile ($60M)
+- Maintenance requirement:
+  - ≤ 2,500 hours between servicing
+
+**Pricing Inputs**
+- Expense ratio: 15%
+- Risk loading: 10%
+- Profit margin: 5%
+- Inflation: 4.23%
+- Discount rate: 5.10%
+
+---
+
+### 5d. Cargo Loss
+
+**Model**
+- Poisson frequency (dispersion ≈ 1)
+- Gamma severity (dispersion ≈ 0.73)
+
+**Key Variables**
+- Maintenance (p < 2e-16)  
+→ Highly significant for frequency, limited impact on severity
+
+**Product Features**
+- Deductible: 10th percentile ($34,740)
+- Per-claim cap: 95th percentile ($196,169)
+- Aggregate cap: 99.5th percentile ($60M)
+- Maintenance threshold:
+  - ≤ 2,500 hours between servicing
+
+**Pricing Inputs**
+- Risk margin: 15%
+- Expense ratio: 10%
+- Profit margin: 5%
+- Inflation: 2.46% p.a.
+- Trend factor: 1.22 (over 8 years)
+- Discount rate: 4.74%
+- Claim settlement lag: 0.5 years
+
+---
 
 ## Key Results
 We could include a table containing expected net revenue for each of the systems for each hazard area?
