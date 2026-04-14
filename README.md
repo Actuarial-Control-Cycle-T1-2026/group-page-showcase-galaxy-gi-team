@@ -93,9 +93,9 @@ We could include a table containing expected net revenue for each of the systems
 
 |Solar System|Business Interruption|Cargo|Equipment Failure|Workers Compensation|
 |:---|:---|:---|:---|:---|
-|Helionis Cluster|insert value|insert value|$3.5M|insert value|
-|Bayesia System|insert value|insert value|$1M|insert value|
-|Oryn Delta|insert value|insert value|$363K|insert value|
+|Helionis Cluster|insert value|$3.6B|$3.5M|insert value|
+|Bayesia System|insert value|$3.1B|$1M|insert value|
+|Oryn Delta|insert value|$3.2B|$363K|insert value|
 
 ## Risk Assessment
 Go over risk profile of each solar system, no need to do separately for each hazard area I reckon
