@@ -203,15 +203,22 @@ After seeing the spread of claim amount by cargo type (see above image), the sev
 ---
 
 ## Key Results
-We could include a table containing expected net revenue for each of the systems for each hazard area?
 
-### Expected Net Revenue For Each Product
+### Expected Total Losses For Each Hazard Area
 
 |Solar System|Business Interruption|Cargo|Equipment Failure|Workers Compensation|
 |:---|:---|:---|:---|:---|
-|Helionis Cluster|insert value|$3.6B|$3.5M|insert value|
-|Bayesia System|insert value|$3.1B|$1M|insert value|
-|Oryn Delta|insert value|$3.2B|$363K|insert value|
+|Helionis Cluster|$470.9M|$16.7B|$20.5M|$5.7M|
+|Bayesia System|$241.3M|$14.0B|$6.2M|$3.1M|
+|Oryn Delta|$146.1M|$14.6B|$2.2M|$1.8M|
+
+### Expected Net Revenue For Each Hazard Area
+
+|Solar System|Business Interruption|Cargo|Equipment Failure|Workers Compensation|
+|:---|:---|:---|:---|:---|
+|Helionis Cluster|$79.5M|$3.6B|$3.5M|$970K|
+|Bayesia System|$40.7M|$3.1B|$1.0M|$530K|
+|Oryn Delta|$16.1M|$3.2B|$363K|$308K|
 
 ## Risk Assessment
 
