@@ -1,4 +1,4 @@
-<img width="468" height="292" alt="image" src="https://github.com/user-attachments/assets/065fd450-3d64-4ce6-85ec-872cfd0157fd" /># SOA Case Study 2026: Actuaries in Space
+# SOA Case Study 2026: Actuaries in Space
 
 ### Project Team
 Michelle Chen, Ianish Ketaruth, Ellen Lim, Alec Peng, Swetha Ramesh
