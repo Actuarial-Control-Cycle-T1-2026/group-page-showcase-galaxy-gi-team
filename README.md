@@ -72,137 +72,17 @@ For cargo loss severity, from the EDA above it was clear that severity was split
 After seeing the spread of claim amount by cargo type (see above image), the severity data was split depending on cargo group. Then two Gamma generalised linear models were fit to each dataset. After comparing the AIC after this change, it was determined that this was a better fit for the data. 
 
 ## Assumptions
-### Business Interruption
 
-**Model**
-- Negative Binomial frequency (dispersion: 1.97)
-- Gamma severity (dispersion: 2.82)
-- Claims assumed independent
+Our modelling framework is built on a set of consistent financial and pricing assumptions applied across all hazard areas to ensure comparability and internal coherence. A 10th percentile excess was used as the attachment point for losses, reflecting a conservative threshold designed to focus coverage on more severe claim events while excluding high-frequency, low-severity losses. In addition, a per-claim cap at the 95th percentile of simulated losses and an aggregate annual cap at the 99.5th percentile were applied to limit extreme tail exposure while preserving meaningful risk differentiation across systems and coverages. This overall structure aligns with the tail-focused nature of interstellar mining risk and supports more stable pricing outcomes under extreme but plausible scenarios.
 
-**Key Variables**
-- Supply chain index (p = 0.022)
-- Energy backup score (p = 0.036)  
-→ Both significant for frequency only
+For pricing and financial calibration, a fixed risk loading of 10% and target profit margin of 5% were applied uniformly across all systems and coverages. Inflation and discount rate assumptions were taken directly from the prospective business data provided in the RFP, with an inflation rate of 4.23% and a discount rate of 5.1%. These were used to translate simulated losses into present-value terms and ensure pricing reflects both expected cost escalation and the time value of money in interplanetary operations.
 
-**Product Features**
-- Deductible: 10th percentile ($462,800)
-- Per-claim cap: 95th percentile ($15.2M)
-- Aggregate cap: 99.5th percentile ($1.105B)
-- Minimum requirements:
-  - Energy backup ≥ 2/5
-  - Safety compliance ≥ 2/5
+In addition, product-specific underwriting assumptions were incorporated to better reflect operational controls and mitigate extreme risk exposures. For equipment failure, a minimum equipment maintenance standard was required; for business interruption, a minimum level of safety compliance was imposed; and for workers’ compensation, a salary cap was introduced to limit exposure to extreme payroll-driven claims.
 
-**Pricing Inputs**
-- Expense ratio: 15%
-- Risk loading: 10%
-- Profit margin: 5%
-- Inflation: 4.23%
-- Discount rate: 5.10%
-
----
-
-### Workers Compensation
-
-**Model**
-- Poisson frequency (dispersion: 0.994)
-- Gamma severity (dispersion: 5.50)
-- Claims assumed independent
-
-**Key Assumptions**
-- Gravity factors:
-  - Bayesia: 1.375
-  - Oryn Delta: 0.875
-  - Helionis: 1.125
-- Workforce distribution: 54.5% / 27.3% / 18.2%
-- 23 roles mapped to 11 occupation categories
-- Salary cap: $130,000
-- Missing worker characteristics simulated
-
-**Key Variables**
-- Frequency:
-  - Occupation
-  - Accident history
-  - Psychological stress
-  - Gravity (p = 0.003)
-  - Safety training
-- Severity:
-  - Psychological stress
-  - Base salary
-- Gravity not significant for severity (p = 0.895)
-
-**Product Features**
-- Excess: 10th percentile ($555)
-- Per-claim cap: 95th percentile ($48,000)
-- Aggregate cap: ~99.5th percentile ($24M)
-- Exclusion:
-  - Safety training < level 2 (43% higher claim rate)
-  - No exclusion for gear (not significant)
-
-**Pricing Inputs**
-- Expense ratio: 15%
-- Risk loading: 10%
-- Profit margin: 5%
-- Inflation: 4.23%
-- Discount rate: 5.10%
-- Workforce growth: 2.1% p.a.
-
----
-
-### Equipment Failure
-
-**Model**
-- Poisson frequency (dispersion ≈ 1)
-- Gamma severity (dispersion ≈ 0.73)
-
-**Key Variables**
-- Maintenance frequency (p < 2e-16)  
-→ Significant for frequency only
-
-**Product Features**
-- Deductible: 10th percentile ($34,740)
-- Per-claim cap: 95th percentile ($196,169)
-- Aggregate cap: 99.5th percentile ($60M)
-- Maintenance requirement:
-  - ≤ 2,500 hours between servicing
-
-**Pricing Inputs**
-- Expense ratio: 15%
-- Risk loading: 10%
-- Profit margin: 5%
-- Inflation: 4.23%
-- Discount rate: 5.10%
-
----
-
-### Cargo Loss
-
-**Model**
-- Poisson frequency (dispersion ≈ 1)
-- Gamma severity (dispersion ≈ 0.73)
-
-**Key Variables**
-- Maintenance (p < 2e-16)  
-→ Highly significant for frequency, limited impact on severity
-
-**Product Features**
-- Deductible: 10th percentile ($34,740)
-- Per-claim cap: 95th percentile ($196,169)
-- Aggregate cap: 99.5th percentile ($60M)
-- Maintenance threshold:
-  - ≤ 2,500 hours between servicing
-
-**Pricing Inputs**
-- Risk margin: 15%
-- Expense ratio: 10%
-- Profit margin: 5%
-- Inflation: 2.46% p.a.
-- Trend factor: 1.22 (over 8 years)
-- Discount rate: 4.74%
-- Claim settlement lag: 0.5 years
-
----
 
 ## Key Results
+
+Our key results summarise the financial outcomes of the modelling framework across each hazard area and solar system. Using stochastic simulation outputs, we estimated expected total losses and expected net revenue for equipment failure, cargo loss, workers’ compensation, and business interruption across the Helionis Cluster, Bayesia System, and Oryn Delta. These results reflect the interaction between system-specific risk profiles and the prospective exposure data, providing a consistent basis for comparison across regions and coverages.
 
 ### Expected Total Losses For Each Hazard Area
 
