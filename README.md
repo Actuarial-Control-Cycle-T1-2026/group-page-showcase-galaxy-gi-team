@@ -66,6 +66,10 @@ We developed our modelling framework by first preparing historical claims data a
 
 To project future performance, we combined the GLM outputs with prospective exposure data provided in the RFP, allowing us to generate predictions of claim frequency and severity for Cosmic Quarry Mining Corporation’s operations. We then applied a stochastic simulation approach, running 10,000 simulations to model the aggregate loss distribution for each hazard area. This enabled us to quantify the expected losses, variability, and tail risk, providing a solid foundation for pricing and product design.
 
+### Business Interruption
+
+INSERT TEXT
+
 ### Cargo Loss
 For cargo loss frequency, a Poisson model was initially fit. However, after finding the dispersion coefficient of 4.506735, it was clear that the model was too dispersed to fit the data. Then a negative binomial was fit to cargo loss frequency. After testing the AIC, it was clear that the negative binomial model was a better fit for the dataset. Then, testing was performed to reduce the complexity of the model by removing insignificant and unnecessary predictors. AIC was also used to test the goodness of fit of the model, with results showing a reduced model was less complex and a better fit. 
 
@@ -74,6 +78,16 @@ For cargo loss severity, from the EDA above it was clear that severity was split
 <img width="669" height="488" alt="Screenshot 2026-04-14 at 10 33 17 PM" src="https://github.com/user-attachments/assets/8638a0a5-f79a-4d95-a1ea-a7eae710921f" />
 
 After seeing the spread of claim amount by cargo type (see above image), the severity data was split depending on cargo group. Then two Gamma generalised linear models were fit to each dataset. After comparing the AIC after this change, it was determined that this was a better fit for the data. 
+
+### Equipment Failure
+
+Equipment failure risk was modelled using a frequency–severity framework. Claim frequency was estimated using a Poisson GLM with key predictors including equipment type, age, maintenance level, and usage intensity, while claim severity was modelled using a Gamma GLM driven primarily by equipment type, age, and usage. This structure captures the operational drivers of failure as well as the strictly positive, right-skewed nature of loss severity. The two components were combined through a 10,000-iteration Monte Carlo simulation, incorporating product features and underwriting constraints to generate full aggregate loss distributions for each solar system.
+
+Results show expected losses are highest in the Helionis Cluster (~$20M), followed by Bayesia (~$6M) and Oryn Delta (~$2M), reflecting differences in asset volume, age, and operational intensity. Expected net revenue ranges from approximately $363k in Oryn Delta to $3.49M in Helionis, with Oryn Delta showing a higher probability of loss due to limited diversification and greater sensitivity to individual large claims. Stress testing indicates the model is more sensitive to severity than frequency, with losses increasing more sharply under severity shocks, while remaining within aggregate limits unless both frequency and severity increase simultaneously.
+
+### Workers Compensation
+
+INSERT TEXT
 
 ## Assumptions
 
