@@ -214,7 +214,12 @@ We could include a table containing expected net revenue for each of the systems
 |Oryn Delta|insert value|$3.2B|$363K|insert value|
 
 ## Risk Assessment
-Go over risk profile of each solar system, no need to do separately for each hazard area I reckon
+
+Helionis Cluster presents a high level of operational volatility that most strongly impacts equipment failure and cargo loss risks. Frequent micro-collisions, shifting asteroid debris fields, and irregular gravitational resonances create a physically unstable mining and transport environment, increasing the likelihood of mechanical damage and disrupted supply chains. While its temperate and cold terrestrial mining sites are comparatively stable, the outer asteroid clusters dominate the overall risk profile due to rapid debris movement and periodic fragmentation events that also strain satellite relay infrastructure.
+
+Bayesia System’s risk profile is primarily driven by workers’ compensation and equipment failure hazards, with secondary impacts on cargo integrity during radiation events. The binary star configuration produces intermittent spikes in radiation and particle emissions, accelerating equipment degradation and exposing personnel to elevated health and safety risks, particularly in the high-gravity mining environment. Although transport routes are relatively well-established and stable, these environmental extremes introduce periodic but severe disruption risks that must be accounted for in both workforce and asset protection modelling.
+
+Oryn Delta is most significantly exposed to cargo loss and workers’ compensation risks, with growing relevance for equipment failure in expanding deep-extraction operations. The system’s low luminosity, communication limitations, and unstable gravitational conditions within the asymmetric asteroid ring create a challenging environment for safe navigation and reliable logistics. As operations extend into more hazardous outer regions, the combination of poor visibility, orbital shear zones, and delayed response capabilities increases both accident likelihood and the potential severity of operational losses.
 
 ## Recommendations
 Product design, future scalability, etc?
