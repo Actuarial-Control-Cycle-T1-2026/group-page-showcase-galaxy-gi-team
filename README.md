@@ -13,6 +13,8 @@ Step 1: Upload images of plots we want to include
 
 Step 2: Update the README.md file (basically this file dictates what the website shows)
 
+Commit changes to save changes
+
 
 ## Project Outline
 
