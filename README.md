@@ -62,7 +62,7 @@ We developed our modelling framework by first preparing historical claims data a
 
 To project future performance, we combined the GLM outputs with prospective exposure data provided in the RFP, allowing us to generate predictions of claim frequency and severity for Cosmic Quarry Mining Corporation’s operations. We then applied a stochastic simulation approach, running 10,000 simulations to model the aggregate loss distribution for each hazard area. This enabled us to quantify the expected losses, variability, and tail risk, providing a solid foundation for pricing and product design.
 
-# Cargo Loss
+### Cargo Loss
 For cargo loss frequency, a Poisson model was initially fit. However, after finding the dispersion coefficient of 4.506735, it was clear that the model was too dispersed to fit the data. Then a negative binomial was fit to cargo loss frequency. After testing the AIC, it was clear that the negative binomial model was a better fit for the dataset. Then, testing was performed to reduce the complexity of the model by removing insignificant and unnecessary predictors. AIC was also used to test the goodness of fit of the model, with results showing a reduced model was less complex and a better fit. 
 
 For cargo loss severity, from the EDA above it was clear that severity was split into two distinct groups. After testing a Gamma model and the Pearson residuals, it was clear that Gamma was not a good fit for the data. 
