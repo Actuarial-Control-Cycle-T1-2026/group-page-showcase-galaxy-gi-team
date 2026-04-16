@@ -1,4 +1,4 @@
-# SOA Case Study 2026: Actuaries in Space
+<img width="468" height="292" alt="image" src="https://github.com/user-attachments/assets/065fd450-3d64-4ce6-85ec-872cfd0157fd" /># SOA Case Study 2026: Actuaries in Space
 
 ### Project Team
 Michelle Chen, Ianish Ketaruth, Ellen Lim, Alec Peng, Swetha Ramesh
@@ -70,7 +70,12 @@ To project future performance, we combined the GLM outputs with prospective expo
 
 ### Business Interruption
 
-INSERT TEXT
+Claim frequency was modelled with a Negative Binomial GLM, with predictors including solar system, production load, energy backup score, supply chain index, crew experience, maintenance frequency and safety compliance. Severity was modelled with a Gamma GLM, with key drivers including solar system, production load, energy backup score and safety compliance. We simulated aggregate losses with Monte Carlo simulations, over 10,000 iterations and found the total premium is allocated proportionally by expected loss, with Helionis carrying the highest share.
+
+At portfolio level, the probability of negative net revenue is 7.5%, with expected net revenue of $136.1M and 5th percentile of -$20.95M, indicating that losses are still manageable under adverse conditions (see Appendix Table BI-2). For short- and long-term projections, the present value of costs declines from $467M to $433.4M for Helionis over 10 years as the discount rate (5.10%) partially offsets inflation (4.23%), thus highlighting profitability over the full projection horizon.
+
+<img width="343" height="257" alt="image" src="https://github.com/user-attachments/assets/6e103d78-fcae-4320-bac7-161396f7f3f6" />
+
 
 ### Cargo Loss
 For cargo loss frequency, a Poisson model was initially fit. However, after finding the dispersion coefficient of 4.506735, it was clear that the model was too dispersed to fit the data. Then a negative binomial was fit to cargo loss frequency. After testing the AIC, it was clear that the negative binomial model was a better fit for the dataset. Then, testing was performed to reduce the complexity of the model by removing insignificant and unnecessary predictors. AIC was also used to test the goodness of fit of the model, with results showing a reduced model was less complex and a better fit. 
