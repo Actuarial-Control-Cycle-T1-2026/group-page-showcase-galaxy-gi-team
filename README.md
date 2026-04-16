@@ -69,7 +69,7 @@ The distribution of simulated equipment failure losses displays a clear right-sk
 
 Example for Workers Compensation
 
-The workers compensation claim distribution is heavily right-skewed, with most claims concentrated at lower values and a long tail of severe incidents. The log-transformed distribution reveals a bimodal structure, with a primary mode reflecting typical operational injuries and a secondary mode tied to larger claims from severe accidents or high-salary workers. A Gamma GLM was used to model severity, capturing the strictly positive and right-skewed nature of the data, with per-claim caps applied in the product design to manage tail exposure.
+The workers compensation claim distribution is heavily right-skewed, with most claims concentrated at lower values and a long tail of severe incidents. The log-transformed distribution reveals the underlying structure more clearly, with a primary concentration of typical operational injuries and a smaller cluster of larger claims from severe accidents or high-salary workers. A Gamma GLM was used to model severity, capturing the strictly positive and right-skewed nature of the data, with per-claim caps applied in the product design to manage tail exposure.
 
 ## Modelling Approach and Methodology
 
