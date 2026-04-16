@@ -63,6 +63,7 @@ Example for Equipment Failure
 The distribution of simulated equipment failure losses displays a clear right-skewed shape, which is typical of insurance claims data. A gamma distribution was used to model severity, capturing the strictly positive and heavy-tailed nature of equipment failure costs. Most observations are concentrated at lower loss levels, with a long right tail reflecting infrequent but severe events. This behaviour is consistent with operational risk in high-stress mining environments, where extreme equipment breakdowns can lead to disproportionately large losses relative to the average claim.
 
 ![workers comp log claims](Log_Claim_Amounts_WC.png)
+
 Example for Workers Compensation
 
 The workers compensation claim distribution is heavily right-skewed, with most claims concentrated at lower values and a long tail of severe incidents. The log-transformed distribution reveals a bimodal structure, with a primary mode reflecting typical operational injuries and a secondary mode tied to larger claims from severe accidents or high-salary workers. A Gamma GLM was used to model severity, capturing the strictly positive and right-skewed nature of the data, with per-claim caps applied in the product design to manage tail exposure.
