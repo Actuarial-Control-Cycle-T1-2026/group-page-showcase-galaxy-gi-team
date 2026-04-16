@@ -62,6 +62,7 @@ Example for Equipment Failure
 
 The distribution of simulated equipment failure losses displays a clear right-skewed shape, which is typical of insurance claims data. A gamma distribution was used to model severity, capturing the strictly positive and heavy-tailed nature of equipment failure costs. Most observations are concentrated at lower loss levels, with a long right tail reflecting infrequent but severe events. This behaviour is consistent with operational risk in high-stress mining environments, where extreme equipment breakdowns can lead to disproportionately large losses relative to the average claim.
 
+![workers comp log claims](Log_Claim_Amounts_WC.png)
 Example for Workers Compensation
 
 The workers compensation claim distribution is heavily right-skewed, with most claims concentrated at lower values and a long tail of severe incidents. The log-transformed distribution reveals a bimodal structure, with a primary mode reflecting typical operational injuries and a secondary mode tied to larger claims from severe accidents or high-salary workers. A Gamma GLM was used to model severity, capturing the strictly positive and right-skewed nature of the data, with per-claim caps applied in the product design to manage tail exposure.
@@ -102,7 +103,7 @@ Claim frequency was modelled using a Poisson GLM, with key predictors including 
 
 Results show the highest per-worker cost in Bayesia (~$322), followed by Helionis (~$294) and Oryn Delta (~$280), reflecting the influence of gravity on frequency. Expected net revenue ranges from approximately $308k in Oryn Delta to $970k in Helionis, with Oryn Delta showing the highest probability of loss at the system level due to its smaller workforce and reduced diversification. At portfolio level, the probability of negative net revenue drops to 0.2%, highlighting the diversification benefit of offering a single policy across all three systems.
 
-At portfolio level, the total premium of $14.7M is allocated proportionally by expected loss, producing per-worker costs of $294 (Helionis), $322 (Bayesia), and $280 (Oryn Delta). Bayesia carries the highest per-worker cost despite a smaller workforce, driven by its high-gravity environment. Expected net revenue is $1.81M with only a 0.2% probability of negative net revenue at the portfolio level, reflecting strong diversification — individual systems carry materially higher loss probabilities (Oryn Delta 11.5%, Bayesia 5.7%, Helionis 1.7%), but cross-system diversification suppresses portfolio-level volatility. Stress testing showed net revenue remains positive through the 1-in-200 return period and only turns marginally negative at 1-in-1000, with the aggregate cap never binding because the per-claim cap absorbs most of the tail.
+![raw vs product design losses](Raw_vs_product_design_losses_WC.png)
 
 ## Assumptions
 
