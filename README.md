@@ -72,7 +72,7 @@ For cargo loss severity, from the EDA above it was clear that severity was split
 After seeing the spread of claim amount by cargo type (see above image), the severity data was split depending on cargo group. Then two Gamma generalised linear models were fit to each dataset. After comparing the AIC after this change, it was determined that this was a better fit for the data. 
 
 ## Assumptions
-### 5a. Business Interruption
+### Business Interruption
 
 **Model**
 - Negative Binomial frequency (dispersion: 1.97)
@@ -101,7 +101,7 @@ After seeing the spread of claim amount by cargo type (see above image), the sev
 
 ---
 
-### 5b. Workers Compensation
+### Workers Compensation
 
 **Model**
 - Poisson frequency (dispersion: 0.994)
@@ -148,7 +148,7 @@ After seeing the spread of claim amount by cargo type (see above image), the sev
 
 ---
 
-### 5c. Equipment Failure
+### Equipment Failure
 
 **Model**
 - Poisson frequency (dispersion ≈ 1)
@@ -174,7 +174,7 @@ After seeing the spread of claim amount by cargo type (see above image), the sev
 
 ---
 
-### 5d. Cargo Loss
+### Cargo Loss
 
 **Model**
 - Poisson frequency (dispersion ≈ 1)
