@@ -152,76 +152,73 @@ Bayesia System’s risk profile is primarily driven by workers’ compensation a
 Oryn Delta is most significantly exposed to cargo loss and workers’ compensation risks, with growing relevance for equipment failure in expanding deep-extraction operations. The system’s low luminosity, communication limitations, and unstable gravitational conditions within the asymmetric asteroid ring create a challenging environment for safe navigation and reliable logistics. As operations extend into more hazardous outer regions, the combination of poor visibility, orbital shear zones, and delayed response capabilities increases both accident likelihood and the potential severity of operational losses.
 
 ## Recommendations
-Based on the analysis of the data across the 4 business risks, we propose a suite of suite of insurance products for Cosmic Quarry covering equipment failure, workers’ compensation, and business interruption. Each product has been evaluated using three key criteria which include risk relevance, financial viability, and strategic value, to determine its suitability for inclusion in the portfolio. The key features of the products have been included below: 
+Based on the analysis of the data across the 4 business risks, we propose a suite of insurance products for Cosmic Quarry covering equipment failure, workers' compensation, and business interruption. Each product has been evaluated using three key criteria which include risk relevance, financial viability, and strategic value, to determine its suitability for inclusion in the portfolio. The key features of the products are outlined below:
 
-Business Interruption:
+### Business Interruption
 
-Product - 
-Covers mining revenue loss from disruptions (low frequency, high severity)
-Mean claim ≈ $4.36M, right-skewed
+- **Product:**
+  - Covers mining revenue loss from disruptions (low frequency, high severity)
+  - Mean claim ≈ $4.36M, right-skewed
+- **Structure:**
+  - Deductible: $462.8k (P10)
+  - Per-claim cap: $15.2M (P95)
+  - Aggregate cap: $1.105B (P99.5)
+  - Reduces insurer losses by ~52%
+- **Coverage:**
+  - Trigger: material operational disruption
+  - Covers lost revenue + fixed costs (wages, leases)
+  - Events: supply chain shocks, extreme conditions
+- **Exclusions:**
+  - Planned downtime
+  - Known/preventable risks
+  - Poor operations
+  - 5-day waiting period
 
-Structure -
-Deductible: $462.8k (P10)
-Per-claim cap: $15.2M (P95)
-Aggregate cap: $1.105B (P99.5)
-Reduces insurer losses by ~52%
+### Equipment Failure
 
-Coverage -
-Trigger: material operational disruption
-Covers lost revenue + fixed costs (wages, leases)
-Events: supply chain shocks, extreme conditions
+- **Product:**
+  - Covers machinery breakdown risk in mining
+  - High frequency (1–3 p.a.), low severity, right-skewed
+  - Mean claim ≈ $89k (few > $1.5M)
+- **Structure:**
+  - Deductible: $34.7k (P10) → removes small/admin-heavy claims
+  - Per-claim cap: $196k (P95)
+  - Aggregate cap: $60M
+- **Coverage:**
+  - Trigger: equipment failure during normal operations
+  - Covers repair/replacement costs
+  - Excludes downtime (covered under BI)
+- **Exclusions:**
+  - Poor maintenance
+  - Known defects
+  - Wear & tear
+  - Breach of manufacturer guidelines
 
-Exclusions - 
-Planned downtime
-Known/preventable risks
-Poor operations
-5-day waiting period
+### Workers Compensation
 
-Equipment Failure: 
-Product - 
-Covers machinery breakdown risk in mining
-High frequency (1–3 p.a.), low severity, right-skewed
-Mean claim ≈ $89k (few > $1.5M)
+- **Product:**
+  - Covers employee injury/illness risk
+  - High frequency, low severity with right-skew
+  - Severity highly variable (Gamma GLM)
+- **Structure:**
+  - Deductible: $555 per claim
+  - Per-claim cap: $48.1k
+  - Aggregate cap: $24M (P99.5)
+- **Coverage:**
+  - Trigger: work-related injury/illness causing > 5-day absence
+  - Applies to employed workers (full-time/contract)
+  - Filters out minor incidents (internalised)
+- **Exclusions:**
+  - Safety non-compliance
+  - Undisclosed pre-existing conditions
+  - Misconduct/negligence
+  - Non-work activities
+  - Non-specific psychological claims
 
-Structure - 
-Deductible: $34.7k (P10) → removes small/admin-heavy claims
-Per-claim cap: $196k (P95)
-Aggregate cap: $60M
+### Cargo Loss
 
-Coverage - 
-Trigger: equipment failure during normal operations
-Covers repair/replacement costs
-Excludes downtime (covered under BI)
+Cargo loss, while highly profitable, exhibits high volatility and a 25% probability of loss per system, with standard deviations exceeding mean returns. Due to this elevated tail risk, it should only be offered where significant reinsurance is in place to cover extreme losses.
 
-Exclusions - 
-Poor maintenance
-Known defects
-Wear & tear
-Breach of manufacturer guidelines
+### Portfolio Summary
 
-Workers Compensation:
-Product-
-Covers employee injury/illness risk
-High frequency, low severity with right-skew
-Severity highly variable (Gamma GLM)
-
-Structure - 
-Deductible: $555 per claim
-Per-claim cap: $48.1k
-Aggregate cap: $24M (P99.5)
-
-Coverage - 
-Trigger: work-related injury/illness causing > 5-day absence
-Applies to employed workers (full-time/contract)
-Filters out minor incidents (internalised)
-
-Exclusions - 
-Safety non-compliance
-Undisclosed pre-existing conditions
-Misconduct/negligence
-Non-work activities
-Non-specific psychological claims
-
-Cargo loss, while highly profitable, it exhibits high volatility and a 25% probability of loss per system, with standard deviations exceeding mean returns. Due to this elevated tail risk, it should only be offered where significant reinsurance is in place to cover extreme losses. 
-
-Overall the proposed portfolio is balanced in terms of both risk and possible returns, with premiums set according to the conditions of each solar system. Equipment Failure and Workers’ Compensation provide a stable, predictable earnings base due to their high-frequency, low-severity profiles, while Business Interruption adds value but requires more capital given its tail risk. To scale sustainably, growth should focus on diversifying exposures across systems to reduce correlation risk, optimising reinsurance to protect against large BI and cargo losses, and maintaining strict underwriting standards around safety and infrastructure quality.
+Overall the proposed portfolio is balanced in terms of both risk and possible returns, with premiums set according to the conditions of each solar system. Equipment Failure and Workers' Compensation provide a stable, predictable earnings base due to their high-frequency, low-severity profiles, while Business Interruption adds value but requires more capital given its tail risk. To scale sustainably, growth should focus on diversifying exposures across systems to reduce correlation risk, optimising reinsurance to protect against large BI and cargo losses, and maintaining strict underwriting standards around safety and infrastructure quality.
