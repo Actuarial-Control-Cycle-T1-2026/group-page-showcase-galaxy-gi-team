@@ -51,23 +51,35 @@ cargo_freq_clean <- cargo_freq_clean %>%
 ## Exploratory Data Analysis
 To better understand the severity and frequency data from the datasets, exploratory data analysis was undertaken. In this step, we looked at summary statistics, histograms and plots. 
 
+### Business Interruption
+
+Figure 1: Business Interruption EDA
+
+<img width="368" height="276" alt="image" src="https://github.com/user-attachments/assets/167d23c1-58d9-4376-b943-bc025adbbafc" />
+
+The above histogram shows that BI claims are highly right-skewed, with most losses small but a long tail of extreme claims driving the mean and overall insurer risk. Overall, this disparity demonstrates the need for appropriate product design in handling right-tail risk.
+
+### Cargo Loss
+
+Figure 2: Cargo Loss EDA
+
 <img width="666" height="484" alt="Screenshot 2026-04-14 at 10 25 56 PM" src="https://github.com/user-attachments/assets/930cf15d-179f-47b6-8a1c-caa446a575df" />
-
-
-Example for Cargo Loss
 
 The above histogram demonstrates the bimodal nature of cargo loss severity. This is due to a higher number of small or catastrophic cargo accidents. Hence, through this exploratory data analysis, we can better understand the nature of the cargo loss claims and therefore the best way to price them.
 
-![equipment failure histogram](Equip_F_histogram.png)
+### Equipment Failure
 
-Example for Equipment Failure
+Figure 3: Equipment Failure EDA
+
+![equipment failure histogram](Equip_F_histogram.png)
 
 The distribution of simulated equipment failure losses displays a clear right-skewed shape, which is typical of insurance claims data. A gamma distribution was used to model severity, capturing the strictly positive and heavy-tailed nature of equipment failure costs. Most observations are concentrated at lower loss levels, with a long right tail reflecting infrequent but severe events. This behaviour is consistent with operational risk in high-stress mining environments, where extreme equipment breakdowns can lead to disproportionately large losses relative to the average claim.
 
+### Workers Compensation
+
+Figure 4: Workers Compensation EDA
 
 ![workers comp log claims](Log_Claim_Amounts_WC.png)
-
-Example for Workers Compensation
 
 The workers compensation claim distribution is heavily right-skewed, with most claims concentrated at lower values and a long tail of severe incidents. The log-transformed distribution reveals the underlying structure more clearly, with a primary concentration of typical operational injuries and a smaller cluster of larger claims from severe accidents or high-salary workers. A Gamma GLM was used to model severity, capturing the strictly positive and right-skewed nature of the data, with per-claim caps applied in the product design to manage tail exposure.
 
@@ -83,6 +95,8 @@ Claim frequency was modelled with a Negative Binomial GLM, with predictors inclu
 
 At portfolio level, the probability of negative net revenue is 7.5%, with expected net revenue of $136.1M and 5th percentile of -$20.95M, indicating that losses are still manageable under adverse conditions (see Appendix Table BI-2). For short- and long-term projections, the present value of costs declines from $467M to $433.4M for Helionis over 10 years as the discount rate (5.10%) partially offsets inflation (4.23%), thus highlighting profitability over the full projection horizon.
 
+Figure 5: Business Interruption Claims Distribution
+
 <img width="343" height="257" alt="image" src="https://github.com/user-attachments/assets/6e103d78-fcae-4320-bac7-161396f7f3f6" />
 
 
@@ -90,6 +104,8 @@ At portfolio level, the probability of negative net revenue is 7.5%, with expect
 For cargo loss frequency, a Poisson model was initially fit. However, after finding the dispersion coefficient of 4.506735, it was clear that the model was too dispersed to fit the data. Then a negative binomial was fit to cargo loss frequency. After testing the AIC, it was clear that the negative binomial model was a better fit for the dataset. Then, testing was performed to reduce the complexity of the model by removing insignificant and unnecessary predictors. AIC was also used to test the goodness of fit of the model, with results showing a reduced model was less complex and a better fit. 
 
 For cargo loss severity, from the EDA above it was clear that severity was split into two distinct groups. After testing a Gamma model and the Pearson residuals, it was clear that Gamma was not a good fit for the data. 
+
+Figure 6: Cargo Loss Claims Distribution
 
 <img width="669" height="488" alt="Screenshot 2026-04-14 at 10 33 17 PM" src="https://github.com/user-attachments/assets/8638a0a5-f79a-4d95-a1ea-a7eae710921f" />
 
@@ -106,6 +122,8 @@ Results show expected losses are highest in the Helionis Cluster (~$20M), follow
 Claim frequency was modelled using a Poisson GLM, with key predictors including occupation, accident history, psychological stress, gravity and safety training. Severity was modelled using a Gamma GLM, driven primarily by psychological stress and base salary. Gravity was found to significantly affect claim frequency but not severity, indicating that higher-gravity environments generate more claims rather than larger ones. Aggregate losses were simulated over 10,000 Monte Carlo iterations, incorporating the product benefit structure which reduces raw insurer losses by 44.8%.
 
 Results show the highest per-worker cost in Bayesia ($322), followed by Helionis ($294) and Oryn Delta ($280), reflecting the influence of gravity on frequency. Expected net revenue ranges from approximately $308k in Oryn Delta to $970k in Helionis, with Oryn Delta showing the highest probability of loss at the system level due to its smaller workforce and reduced diversification. At portfolio level, the probability of negative net revenue drops to 0.2%, highlighting the diversification benefit of offering a single policy across all three systems.
+
+Figure 7: Workers Compensation Claims Distribution
 
 ![raw vs product design losses](Raw_vs_product_design_losses_WC.png)
 
