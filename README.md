@@ -53,7 +53,7 @@ To better understand the severity and frequency data from the datasets, explorat
 
 ### Business Interruption
 
-Figure 1: Business Interruption EDA
+Figure 1: Business Interruption Claim Size Distribution
 
 <img width="368" height="276" alt="image" src="https://github.com/user-attachments/assets/167d23c1-58d9-4376-b943-bc025adbbafc" />
 
@@ -61,7 +61,7 @@ The above histogram shows that BI claims are highly right-skewed, with most loss
 
 ### Cargo Loss
 
-Figure 2: Cargo Loss EDA
+Figure 2: Cargo Loss Claim Size Distribution (Log Scale)
 
 <img width="666" height="484" alt="Screenshot 2026-04-14 at 10 25 56 PM" src="https://github.com/user-attachments/assets/930cf15d-179f-47b6-8a1c-caa446a575df" />
 
@@ -69,7 +69,7 @@ The above histogram demonstrates the bimodal nature of cargo loss severity. This
 
 ### Equipment Failure
 
-Figure 3: Equipment Failure EDA
+Figure 3: Equipment Failure Claim Size Distribution
 
 ![equipment failure histogram](Equip_F_histogram.png)
 
@@ -77,7 +77,7 @@ The distribution of simulated equipment failure losses displays a clear right-sk
 
 ### Workers Compensation
 
-Figure 4: Workers Compensation EDA
+Figure 4: Workers Compensation Claim Size Distribution (Log Scale)
 
 ![workers comp log claims](Log_Claim_Amounts_WC.png)
 
@@ -95,7 +95,7 @@ Claim frequency was modelled with a Negative Binomial GLM, with predictors inclu
 
 At portfolio level, the probability of negative net revenue is 7.5%, with expected net revenue of $136.1M and 5th percentile of -$20.95M, indicating that losses are still manageable under adverse conditions (see Appendix Table BI-2). For short- and long-term projections, the present value of costs declines from $467M to $433.4M for Helionis over 10 years as the discount rate (5.10%) partially offsets inflation (4.23%), thus highlighting profitability over the full projection horizon.
 
-Figure 5: Business Interruption Claims Distribution
+Figure 5: Business Interruption Claims (Log-Transformed Distribution)
 
 <img width="343" height="257" alt="image" src="https://github.com/user-attachments/assets/6e103d78-fcae-4320-bac7-161396f7f3f6" />
 
@@ -105,7 +105,7 @@ For cargo loss frequency, a Poisson model was initially fit. However, after find
 
 For cargo loss severity, from the EDA above it was clear that severity was split into two distinct groups. After testing a Gamma model and the Pearson residuals, it was clear that Gamma was not a good fit for the data. 
 
-Figure 6: Cargo Loss Claims Distribution
+Figure 6: Cargo Loss Claims by Commodity Type
 
 <img width="669" height="488" alt="Screenshot 2026-04-14 at 10 33 17 PM" src="https://github.com/user-attachments/assets/8638a0a5-f79a-4d95-a1ea-a7eae710921f" />
 
@@ -123,7 +123,7 @@ Claim frequency was modelled using a Poisson GLM, with key predictors including 
 
 Results show the highest per-worker cost in Bayesia ($322), followed by Helionis ($294) and Oryn Delta ($280), reflecting the influence of gravity on frequency. Expected net revenue ranges from approximately $308k in Oryn Delta to $970k in Helionis, with Oryn Delta showing the highest probability of loss at the system level due to its smaller workforce and reduced diversification. At portfolio level, the probability of negative net revenue drops to 0.2%, highlighting the diversification benefit of offering a single policy across all three systems.
 
-Figure 7: Workers Compensation Claims Distribution
+Figure 7: Impact of Product Design on Total Losses
 
 ![raw vs product design losses](Raw_vs_product_design_losses_WC.png)
 
