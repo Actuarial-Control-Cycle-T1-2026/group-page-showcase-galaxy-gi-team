@@ -3,19 +3,6 @@
 ### Project Team
 Michelle Chen, Ianish Ketaruth, Ellen Lim, Alec Peng, Swetha Ramesh
 
-## INSTRUCTIONS (from ellen)
-The website is just to showcase our work, no requirements other than:
-- the page must be working and properly deployed
-- minimum 3 people in the group must contribute (different members must edit/commit)
-
-
-Step 1: Upload images of plots we want to include
-
-Step 2: Update the README.md file (basically this file dictates what the website shows)
-
-Commit changes to save changes
-
-
 ## Project Outline
 
 This project was completed as part of the 2026 SOA Research Institute Student Research Case Study Challenge. Our team developed insurance product recommendations for Cosmic Quarry Mining Corporation, a space mining company operating across three solar systems. Using historical claims data across four hazard areas including equipment failure, cargo loss, workers’ compensation, and business interruption, we applied actuarial modelling techniques to assess risk and estimate costs.
