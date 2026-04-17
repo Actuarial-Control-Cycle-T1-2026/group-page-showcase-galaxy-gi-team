@@ -154,7 +154,8 @@ Oryn Delta is most significantly exposed to cargo loss and workers’ compensati
 ## Recommendations
 Based on the analysis of the data across the 4 business risks, we propose a suite of suite of insurance products for Cosmic Quarry covering equipment failure, workers’ compensation, and business interruption. Each product has been evaluated using three key criteria which include risk relevance, financial viability, and strategic value, to determine its suitability for inclusion in the portfolio. The key features of the products have been included below: 
 
-Business Interruption: 
+Business Interruption:
+
 Product - 
 Covers mining revenue loss from disruptions (low frequency, high severity)
 Mean claim ≈ $4.36M, right-skewed
